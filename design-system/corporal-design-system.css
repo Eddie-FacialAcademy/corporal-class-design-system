@@ -129,12 +129,12 @@ a:focus-visible,button:focus-visible,.cc-btn:focus-visible,[tabindex]:focus-visi
 /* ===== TIPOGRAFIA · escala fluida (Desktop ⇄ Phone) ======================= */
 /* Breakpoints Framer de referência: Desktop ≥1200 · Tablet ≤810 · Phone ≤390 */
 .cc-eyebrow{font-size:clamp(11px,1.4vw,12px);letter-spacing:.18em;text-transform:uppercase;color:var(--coral);font-weight:600}
-.cc-h1{font-size:clamp(34px,6vw,60px);font-weight:600;letter-spacing:-.025em;line-height:1.03}
-.cc-h2{font-size:clamp(26px,4vw,38px);font-weight:600;letter-spacing:-.02em;line-height:1.12}
-.cc-h3{font-size:clamp(20px,2.4vw,24px);font-weight:600;line-height:1.2}
-.cc-h4{font-size:clamp(18px,2vw,20px);font-weight:600;letter-spacing:-.01em;line-height:1.25}
-.cc-h5{font-size:clamp(16px,1.7vw,17px);font-weight:600;line-height:1.3}
-.cc-h6{font-size:clamp(13px,1.4vw,15px);font-weight:600;line-height:1.35}
+.cc-h1{font-size:clamp(34px,6vw,60px);font-weight:500;letter-spacing:-.025em;line-height:1.03}
+.cc-h2{font-size:clamp(26px,4vw,38px);font-weight:500;letter-spacing:-.02em;line-height:1.12}
+.cc-h3{font-size:clamp(20px,2.4vw,24px);font-weight:500;line-height:1.2}
+.cc-h4{font-size:clamp(18px,2vw,20px);font-weight:500;letter-spacing:-.01em;line-height:1.25}
+.cc-h5{font-size:clamp(16px,1.7vw,17px);font-weight:500;line-height:1.3}
+.cc-h6{font-size:clamp(13px,1.4vw,15px);font-weight:500;line-height:1.35}
 .cc-lead{font-size:clamp(16px,1.8vw,18px);font-weight:300;color:var(--mut);line-height:1.5}
 .cc-body{font-size:16px;font-weight:300;line-height:1.65}
 .cc-small{font-size:14px;font-weight:300;color:var(--mut);line-height:1.6}

@@ -73,12 +73,12 @@ No light, **dourado e rosa como texto** usam variantes `-ink` (`--gold-ink`, `--
 
 | Estilo | D / T / P | Peso | LH |
 |---|---|---|---|
-| Display / H1 | 60 / 44 / 34 | 600 | 1.03 |
-| Heading / H2 | 38 / 32 / 26 | 600 | 1.12 |
-| Sub / H3 | 24 / 22 / 20 | 600 | 1.2 |
-| Sub / H4 | 20 / 19 / 18 | 600 | 1.25 |
-| Sub / H5 | 17 / 16 / 16 | 600 | 1.3 |
-| Sub / H6 | 15 / 14 / 14 | 600 | 1.35 |
+| Display / H1 | 60 / 44 / 34 | 500 | 1.03 |
+| Heading / H2 | 38 / 32 / 26 | 500 | 1.12 |
+| Sub / H3 | 24 / 22 / 20 | 500 | 1.2 |
+| Sub / H4 | 20 / 19 / 18 | 500 | 1.25 |
+| Sub / H5 | 17 / 16 / 16 | 500 | 1.3 |
+| Sub / H6 | 15 / 14 / 14 | 500 | 1.35 |
 | Eyebrow | 12 / 12 / 11 | 600 | 1.2 · UPPERCASE · tracking .18em · cor coral |
 | Lead | 18 / 17 / 16 | 300 | 1.5 · cor muted |
 | Body | 16 / 16 / 16 | 300 | 1.65 |
