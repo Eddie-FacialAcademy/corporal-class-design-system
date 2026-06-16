@@ -33,7 +33,7 @@
       "bg": "#FFFFFF", "bg2": "#FBF3F3", "card": "#FEF8F8", "card2": "#FAEDED",
       "line": "rgba(214,81,92,.16)",
       "bordo": "#5A2730", "bordo2": "#D6515C", "bordoBright": "#E0727A",
-      "coral": "#D6515C", "coralSoft": "#B05059",
+      "coral": "#C2434E", "coralSoft": "#B05059",
       "txt": "#2A1517", "mut": "#8B656B", "legalMut": "#8B656B",
       "gold": "#FFE4A4", "goldDeep": "#D6C08A", "goldInk": "#7A5A0E", "goldLine": "rgba(122,90,14,.55)",
       "rose": "#FFB1BD", "roseInk": "#B04A5E", "roseLine": "rgba(176,74,94,.50)",
