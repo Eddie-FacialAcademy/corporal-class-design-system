@@ -5,8 +5,8 @@ Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avanç
 ## ✅ Concluído
 
 ### Design system online (GitHub Pages)
-- **URL pública:** https://edegardesignacademy-hash.github.io/corporal-class-design-system/
-- Repo público `corporal-class-design-system` (conta `edegardesignacademy-hash`), branch `main`, `index.html` na raiz.
+- **URL pública:** https://eddie-facialacademy.github.io/corporal-class-design-system/
+- Repo público `corporal-class-design-system` (conta `Eddie-FacialAcademy`), branch `main`, `index.html` na raiz.
 - Pasta dedicada local: `_Claudio x Eddie/Corporal Class - Design System/` (1 pasta por marca).
 - `index.html`: showcase self-contained, dark/light automático + toggle, click-to-copy, **copiar/baixar SVG** de logos+ícones, **download PNG** dos gradientes.
 
