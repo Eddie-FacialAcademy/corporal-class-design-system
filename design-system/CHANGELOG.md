@@ -14,10 +14,12 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
-## [1.4.2] ? 2026-06-18
+## [1.4.2] — 2026-06-18
 ### Corrigido
-- Sincroniza??o dos valores can?nicos entre showcase, CSS drop-in, JSON de tokens, documenta??o e tabela de Color Styles: fundo light `#FAFAFA`, `--danger` light `#BE2C45`, eleva??o dark preta em camadas e tokens de componentes avan?ados no pacote.
-- `--info` do pacote voltou ao teal can?nico (`#74C0D8` dark / `#2A7286` light), `--mut` light foi para `#835D63` e os bot?es preenchidos/s?lidos usam tons com contraste AA para texto branco (`#C2434E`, hover `#B05059`).
+- Sincronização dos valores canônicos entre showcase, CSS drop-in, JSON de tokens, documentação e tabela de Color Styles: fundo light `#FAFAFA`, `--danger` light `#BE2C45`, elevação dark preta em camadas e tokens de componentes avançados no pacote.
+- `--info` do pacote voltou ao teal canônico (`#74C0D8` dark / `#2A7286` light), `--mut` light foi para `#835D63` e os botões preenchidos/sólidos usam tom com contraste AA para texto branco (`#C2434E`, hover `#B05059`).
+### Alterado
+- Seção Cores do showcase: novo grupo "Tema claro · fundos" e textos deixando explícito que as superfícies usam off-white `#FAFAFA` / quase-preto `#0E0708` (nunca branco ou preto puro); preview do tema claro corrigido de `#FFFFFF` para `#FAFAFA`.
 
 ## [1.4.1] — 2026-06-18
 ### Adicionado

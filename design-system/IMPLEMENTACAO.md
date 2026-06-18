@@ -123,7 +123,7 @@ Os `--brand-*` **não** mudam entre temas; os tokens de tema abaixo é que deriv
 /* Componentes */     --row-h:46px  --row-h-compact:38px  --side-w:248px  --cal-cell:38px  --row-sel:(accent .16 dark / .10 light; Corporal light usa rgba(194,67,78,.10))
 ```
 
-**Eleva??o (sombra em camadas; dark preto, light com matiz da marca):**
+**Elevação (sombra em camadas; dark preto, light com matiz da marca):**
 ```
 --elev-1 … --elev-4                            (cada nível mais difuso)
 --elev-3 dark: 0 4px 12px rgba(0,0,0,.45), 0 16px 36px rgba(0,0,0,.55)
