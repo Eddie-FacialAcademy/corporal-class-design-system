@@ -52,7 +52,7 @@
     /* ===== Cores semânticas (feedback) ===== */
     --success:#45C08A; --warning:#E8B53D; --danger:#FF7D93; --info:#74C0D8;
     --success-bg:rgba(69,192,138,.14); --warning-bg:rgba(232,181,61,.14); --danger-bg:rgba(255,125,147,.14); --row-sel:rgba(232,138,146,.16); --info-bg:rgba(116,192,216,.14);
-    /* ===== Escala de elevação (sombras em camadas + matiz do brand) ===== */
+    /* ===== Escala de eleva??o (dark preto em camadas; light com matiz da marca) ===== */
     --elev-1:0 1px 2px rgba(0,0,0,.34), 0 2px 6px rgba(0,0,0,.30);
     --elev-2:0 2px 4px rgba(0,0,0,.34), 0 8px 18px rgba(0,0,0,.40);
     --elev-3:0 4px 12px rgba(0,0,0,.45), 0 16px 36px rgba(0,0,0,.55);
@@ -238,8 +238,8 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
   .themes-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
   @media(max-width:820px){.themes-grid{grid-template-columns:1fr}}
   .tcard{border-radius:18px;overflow:hidden;border:1px solid var(--line)}
-  .tcard.dark{--t-bg:#0E0708;--t-bg2:#1A1012;--t-card:#241619;--t-line:rgba(232,138,146,.14);--t-txt:#FAF7F8;--t-mut:#B0898E;--t-eyebrow:#E88A92;--t-gold-ink:#FFE4A4;--t-grad-a:#D6515C;--t-grad-b:#5A2730}
-  .tcard.light{--t-bg:#FAFAFA;--t-bg2:#FBF3F3;--t-card:#FEF8F8;--t-line:rgba(214,81,92,.16);--t-txt:#2A1517;--t-mut:#8B656B;--t-eyebrow:#D6515C;--t-gold-ink:#7A5A0E;--t-grad-a:#E0727A;--t-grad-b:#D6515C}
+  .tcard.dark{--t-bg:#0E0708;--t-bg2:#1A1012;--t-card:#241619;--t-line:rgba(232,138,146,.14);--t-txt:#FAF7F8;--t-mut:#CBBDBF;--t-eyebrow:#E88A92;--t-gold-ink:#FFE4A4;--t-grad-a:#D6515C;--t-grad-b:#5A2730}
+  .tcard.light{--t-bg:#FAFAFA;--t-bg2:#FBF3F3;--t-card:#FEF8F8;--t-line:rgba(214,81,92,.16);--t-txt:#2A1517;--t-mut:#835D63;--t-eyebrow:#D6515C;--t-gold-ink:#7A5A0E;--t-grad-a:#E0727A;--t-grad-b:#D6515C}
   .tcard .bar{padding:11px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;align-items:center;background:var(--t-bg2);color:var(--t-mut)}
   .tcard .dot{width:34px;height:8px;border-radius:8px;background:linear-gradient(120deg,var(--t-grad-a),var(--t-grad-b))}
   .tcard .body{background:var(--t-bg);padding:28px}
@@ -338,7 +338,7 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
   .b.fill{background:linear-gradient(120deg,#C2434E,var(--bordo));color:#fff;box-shadow:0 10px 30px var(--sh)}
   .b.fill:hover{transform:translateY(-2px);box-shadow:0 16px 38px var(--sh-strong)}
   .b.solid{background:#C2434E;color:#fff}
-  .b.solid:hover{background:var(--bordo-bright)}
+  .b.solid:hover{background:#B05059}
   .b.outline{background:transparent;color:var(--txt);border:1px solid var(--line)}
   .b.outline:hover{border-color:var(--coral);color:var(--coral)}
   .b.ghost{background:transparent;color:var(--coral);padding:10px 14px;border-radius:8px}
@@ -1525,7 +1525,7 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
     <div class="fnd-box"><div class="fnd-sw" style="height:auto;width:64px;aspect-ratio:var(--ar-wide)"></div>16:9</div>
   </div>
   <div class="group-lbl">Elevação semântica</div>
-  <p class="sec-note" style="margin:6px 0 0">Papéis mapeados na escala de sombra: <b class="hl">Elevado</b> = elev-1 · <b class="hl">Sobreposição</b> = elev-3 · <b class="hl">Modal</b> = elev-4. Use o papel (`--elev-raised/overlay/modal`), não o número. Sombras agora em <b class="hl">camadas + matiz do brand</b> (não preto puro).</p>
+  <p class="sec-note" style="margin:6px 0 0">Papéis mapeados na escala de sombra: <b class="hl">Elevado</b> = elev-1 · <b class="hl">Sobreposição</b> = elev-3 · <b class="hl">Modal</b> = elev-4. Use o papel (`--elev-raised/overlay/modal`), não o número. Sombras usam <b class="hl">camadas pretas no dark</b> e <b class="hl">matiz da marca no light</b>.</p>
 
   <div class="group-lbl">Cantos aninhados</div>
   <p class="sec-note" style="margin-bottom:0">Elemento arredondado dentro de outro: os cantos devem ser <b class="hl">concêntricos</b> (mesmo centro de arco). Regra: <b class="hl">raio interno = raio externo − padding</b>, pra o espaçamento ficar uniforme inclusive nos cantos.</p>
@@ -1667,9 +1667,9 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
   <span class="k">--size-icon</span>:20px; <span class="k">--control-h</span>:44px; <span class="k">--touch-min</span>:44px; <span class="k">--ar-square</span>:1/1; <span class="k">--ar-wide</span>:16/9;
 
   <span class="c">/* semânticas (feedback) + elevação (camadas) + papéis */</span>
-  <span class="k">--success</span>:#45C08A; <span class="k">--warning</span>:#E8B53D; <span class="k">--danger</span>:#FF7D93; <span class="k">--info</span>:#E88A92;
-  <span class="k">--elev-1</span>:0 2px 8px rgba(0,0,0,.4); <span class="k">--elev-2</span>:0 6px 18px rgba(0,0,0,.46);
-  <span class="k">--elev-3</span>:0 14px 36px rgba(214,81,92,.46); <span class="k">--elev-4</span>:0 26px 60px rgba(214,81,92,.55);
+  <span class="k">--success</span>:#45C08A; <span class="k">--warning</span>:#E8B53D; <span class="k">--danger</span>:#FF7D93; <span class="k">--info</span>:#74C0D8;
+  <span class="k">--elev-1</span>:0 1px 2px rgba(0,0,0,.34), 0 2px 6px rgba(0,0,0,.30); <span class="k">--elev-2</span>:0 2px 4px rgba(0,0,0,.34), 0 8px 18px rgba(0,0,0,.40);
+  <span class="k">--elev-3</span>:0 4px 12px rgba(0,0,0,.45), 0 16px 36px rgba(0,0,0,.55); <span class="k">--elev-4</span>:0 10px 24px rgba(0,0,0,.5), 0 28px 64px rgba(0,0,0,.62);
   <span class="k">--elev-raised</span>:var(--elev-1); <span class="k">--elev-overlay</span>:var(--elev-3); <span class="k">--elev-modal</span>:var(--elev-4);
 }
 
@@ -1677,7 +1677,7 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
 [data-theme="light"]{
   <span class="k">--bg</span>:#FAFAFA; <span class="k">--bg2</span>:#FBF3F3; <span class="k">--card</span>:#FEF8F8; <span class="k">--card2</span>:#FAEDED;
   <span class="k">--line</span>:rgba(214,81,92,.16);
-  <span class="k">--txt</span>:#2A1517; <span class="k">--mut</span>:#8B656B; <span class="k">--legal-mut</span>:#8B656B;
+  <span class="k">--txt</span>:#2A1517; <span class="k">--mut</span>:#835D63; <span class="k">--legal-mut</span>:#8B656B;
   <span class="k">--bordo2</span>:#D6515C; <span class="k">--bordo-bright</span>:#E0727A; <span class="k">--coral-soft</span>:#B05059;
   <span class="k">--coral</span>:#C2434E;          <span class="c">/* accent/texto: bordô p/ contraste no claro */</span>
   <span class="k">--gold</span>:#FFE4A4; <span class="k">--gold-ink</span>:#7A5A0E; <span class="k">--rose</span>:#FFB1BD; <span class="k">--rose-ink</span>:#B04A5E; <span class="k">--peach</span>:#FFCA9B;
@@ -1711,8 +1711,8 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
   <span class="c">// feedback · valor dark (paridade light no comentário)</span>
   <span class="k">"feedback/Success"</span>:   "#45C08A",   <span class="c">// light #147A45</span>
   <span class="k">"feedback/Warning"</span>:   "#E8B53D",   <span class="c">// light #8A5A00</span>
-  <span class="k">"feedback/Danger"</span>:    "#FF7D93",   <span class="c">// light #C72F49</span>
-  <span class="k">"feedback/Info"</span>:      "#E88A92"    <span class="c">// light #8A4550</span>
+  <span class="k">"feedback/Danger"</span>:    "#FF7D93",   <span class="c">// light #BE2C45</span>
+  <span class="k">"feedback/Info"</span>:      "#74C0D8"    <span class="c">// light #2A7286</span>
 }</div>
 <div class="code"><span class="c">// Text Styles (Silka) · tamanho por breakpoint Framer [desktop, tablet, phone]</span>
 {
@@ -1734,7 +1734,7 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
   <p class="sec-note" style="margin-top:0">No Framer, crie cada cor como um <b class="hl">Color Style</b> com um valor de <b class="hl">Claro</b> e um de <b class="hl">Escuro</b>. O site publicado segue a aparência do sistema do visitante automaticamente (<code>prefers-color-scheme</code>); dá pra adicionar um toggle e lembrar a escolha do visitante. Atalho no canvas: Ctrl+Cmd+N. Valores por estilo:</p>
   <div class="fr">
     <div class="fr-row head"><div>Color Style</div><div>Claro</div><div>Escuro</div></div>
-    <div class="fr-row"><div class="nm">bg / Fundo</div><div class="val"><span class="fr-sw" style="background:#FFFFFF"></span>#FFFFFF</div><div class="val"><span class="fr-sw" style="background:#0E0708"></span>#0E0708</div></div>
+    <div class="fr-row"><div class="nm">bg / Fundo</div><div class="val"><span class="fr-sw" style="background:#FAFAFA"></span>#FAFAFA</div><div class="val"><span class="fr-sw" style="background:#0E0708"></span>#0E0708</div></div>
     <div class="fr-row"><div class="nm">bg / Superfície</div><div class="val"><span class="fr-sw" style="background:#FBF3F3"></span>#FBF3F3</div><div class="val"><span class="fr-sw" style="background:#1A1012"></span>#1A1012</div></div>
     <div class="fr-row"><div class="nm">bg / Cartão</div><div class="val"><span class="fr-sw" style="background:#FEF8F8"></span>#FEF8F8</div><div class="val"><span class="fr-sw" style="background:#241619"></span>#241619</div></div>
     <div class="fr-row"><div class="nm">line / Borda</div><div class="val"><span class="fr-sw" style="background:rgba(214,81,92,.16)"></span>rgba(214,81,92,.16)</div><div class="val"><span class="fr-sw" style="background:rgba(232,138,146,.14)"></span>rgba(232,138,146,.14)</div></div>

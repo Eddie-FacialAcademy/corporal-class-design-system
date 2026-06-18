@@ -14,6 +14,11 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
+## [1.4.2] ? 2026-06-18
+### Corrigido
+- Sincroniza??o dos valores can?nicos entre showcase, CSS drop-in, JSON de tokens, documenta??o e tabela de Color Styles: fundo light `#FAFAFA`, `--danger` light `#BE2C45`, eleva??o dark preta em camadas e tokens de componentes avan?ados no pacote.
+- `--info` do pacote voltou ao teal can?nico (`#74C0D8` dark / `#2A7286` light), `--mut` light foi para `#835D63` e os bot?es preenchidos/s?lidos usam tons com contraste AA para texto branco (`#C2434E`, hover `#B05059`).
+
 ## [1.4.1] — 2026-06-18
 ### Adicionado
 - `IMPLEMENTACAO.md`: documentação técnica de implementação (arquitetura sem build, tokens e theming, fundamentos, botões e todos os estados/microinterações, componentes, comportamentos JS, acessibilidade, responsividade, consumo/Framer, deploy/infra, governança e diferenças por marca). Referenciada no `DESIGN-SYSTEM.md`.
@@ -31,7 +36,7 @@ _Nada pendente no momento._
 
 ## [1.3.1] — 2026-06-17
 ### Corrigido
-- Contraste AA do badge de status "Erro" (status danger) em tema claro: tom de `--danger` aprofundado (#C72F49 → #BE2C45) para passar 4.5:1. WCAG agora 0 falhas nos dois temas.
+- Contraste AA do badge de status "Erro" (status danger) em tema claro: tom de `--danger` aprofundado (valor anterior -> #BE2C45) para passar 4.5:1. WCAG agora 0 falhas nos dois temas.
 ### Alterado
 - `voz-e-tom.md`: adendo geral de referenciamento de experts (genérico, sem citar nomes).
 

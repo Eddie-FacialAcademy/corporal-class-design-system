@@ -120,12 +120,13 @@ Os `--brand-*` **não** mudam entre temas; os tokens de tema abaixo é que deriv
 /* Breakpoints */     --bp-phone:390px  --bp-tablet:810px  --bp-desktop:1200px
 /* Tamanhos */        --size-icon-sm:16  --size-icon:20  --size-icon-lg:24  --control-h:44  --touch-min:44 (px)
 /* Aspect ratio */    --ar-square:1/1  --ar-photo:4/3  --ar-wide:16/9
-/* Componentes */     --row-h:46px  --row-h-compact:38px  --side-w:248px  --cal-cell:38px  --row-sel:(accent .16 dark / .10 light)
+/* Componentes */     --row-h:46px  --row-h-compact:38px  --side-w:248px  --cal-cell:38px  --row-sel:(accent .16 dark / .10 light; Corporal light usa rgba(194,67,78,.10))
 ```
 
-**Elevação (sombra em camadas, matiz da marca):**
+**Eleva??o (sombra em camadas; dark preto, light com matiz da marca):**
 ```
 --elev-1 … --elev-4                            (cada nível mais difuso)
+--elev-3 dark: 0 4px 12px rgba(0,0,0,.45), 0 16px 36px rgba(0,0,0,.55)
 --elev-raised:var(--elev-1)  --elev-overlay:var(--elev-3)  --elev-modal:var(--elev-4)
 --sh / --sh-strong: rgba(214,81,92,.40/.50) dark · .18/.26 light  (glow dos botões fill, matiz bordô)
 ```
@@ -209,12 +210,12 @@ Classe base **`.b`** (drop-in: `.cc-btn`). Composição: `.b` + tamanho (`.sm`/`
 ### 4.2 Variantes e estados (hover/active)
 ```css
 /* Preenchido (gradiente + glow) */
-.b.fill{background:linear-gradient(120deg,var(--bordo2),var(--bordo));color:#fff;box-shadow:0 10px 30px var(--sh)}
+.b.fill{background:linear-gradient(120deg,#C2434E,var(--bordo));color:#fff;box-shadow:0 10px 30px var(--sh)}
 .b.fill:hover{transform:translateY(-2px);box-shadow:0 16px 38px var(--sh-strong)}   /* sobe + glow cresce */
 .b.fill:active{box-shadow:0 6px 18px var(--sh)}                                      /* glow recua */
 
 /* Sólido */
-.b.solid{background:var(--bordo2);color:#fff}
+.b.solid{background:#C2434E;color:#fff}  .b.solid:hover{background:#B05059}
 .b.solid:hover{background:var(--bordo-bright)}
 
 /* Contorno */
