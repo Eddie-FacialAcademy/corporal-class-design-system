@@ -14,6 +14,19 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
+## [1.5.0] — 2026-08-25
+### Adicionado
+- Menu "Design systems" na navegação do showcase: acesso direto aos design
+  systems das seis marcas (Facial Academy, Facial Class, Facial Scale,
+  Workshops Facial, Corporal Academy, Corporal Class), com a marca atual
+  sinalizada e acordeão próprio no menu mobile.
+### Corrigido
+- Registro retroativo (2026-06-22): borda `1px solid var(--gold-ink)` no botão
+  gold preenchido do showcase, para passar WCAG 1.4.11 (contraste não-textual)
+  no tema claro.
+- A mesma borda sincronizada agora no CSS do pacote (`.cc-btn.cc-gold`), que
+  ainda não a trazia.
+
 ## [1.4.2] — 2026-06-18
 ### Corrigido
 - Sincronização dos valores canônicos entre showcase, CSS drop-in, JSON de tokens, documentação e tabela de Color Styles: fundo light `#FAFAFA`, `--danger` light `#BE2C45`, elevação dark preta em camadas e tokens de componentes avançados no pacote.

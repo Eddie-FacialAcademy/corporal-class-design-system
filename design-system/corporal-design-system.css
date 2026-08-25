@@ -168,7 +168,7 @@ a:focus-visible,button:focus-visible,.cc-btn:focus-visible,[tabindex]:focus-visi
 .cc-btn.cc-outline:hover{border-color:var(--coral);color:var(--coral)}
 .cc-btn.cc-ghost{background:transparent;color:var(--coral);padding:10px 14px;border-radius:var(--radius-sm)}
 .cc-btn.cc-ghost:hover{color:var(--coral-soft);text-decoration:underline;text-underline-offset:3px}
-.cc-btn.cc-gold{background:var(--gold);color:#1A0E10}
+.cc-btn.cc-gold{background:var(--gold);color:#1A0E10;border:1px solid var(--gold-ink)}
 .cc-btn.cc-gold:hover{background:var(--gold-deep)}
 .cc-btn.cc-gold-o{background:transparent;color:var(--gold-ink);border:1px solid var(--gold-line)}
 .cc-btn.cc-gold-o:hover{border-color:var(--gold-ink)}
