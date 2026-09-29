@@ -1,4 +1,4 @@
-# Handoff — Corporal Class Design System (estado em 2026-06-11)
+# Handoff: Corporal Class Design System (estado em 2026-06-11)
 
 Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avançar.
 
@@ -17,16 +17,16 @@ Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avanç
 ### Marca (fiel ao brandbook §3.6)
 - **Cor primária:** bordô `#D6515C` (pantone 186 U). Institucionais (5): bordô, vermelho claro `#FFB1BD`, amarelado `#FFE4A4`, branco, preto. Acento derivado coral `#E88A92`.
 - **Logos** Corporal (4 composições) embutidos como `<symbol>` `currentColor` (seguem o tema: branco no dark, bordô no light).
-- **Copy** revisada pra Corporal (Curso Celulite PRO · estética corporal · planos Ouro & Black).
+- **Copy** revisada pra Corporal (Curso Celulite PRO · estética corporal · planos Ouro e Black).
 - **Fonte** Silka inalterada (embutida base64).
 
 ## Deploy / git (durável)
 - `.git` **fora do OneDrive**: `AppData\Local\gitdirs\corporal-class-design-system`.
 - **LF** travado (`.gitattributes`); `.gitignore` barra `desktop.ini`.
-- **Auth:** Git Credential Manager (Cofre do Windows) — push **silencioso, sem token**. Republicar: editar → `git add/commit/push`.
+- **Auth:** Git Credential Manager (Cofre do Windows): push **silencioso, sem token**. Republicar: editar → `git add/commit/push`.
 
-## 🔜 Próximo (opcional — Framer)
-- Aplicar no Framer: criar **Color Styles** (Light+Dark) e **Text Styles** (L/M/S = 1200/810/390) — ver `design-system/DESIGN-SYSTEM.md` (mecânica + bug da Server API + workaround). Importar `Button.tsx`.
+## 🔜 Próximo (opcional, Framer)
+- Aplicar no Framer: criar **Color Styles** (Light+Dark) e **Text Styles** (L/M/S = 1200/810/390); ver `design-system/DESIGN-SYSTEM.md` (mecânica + bug da Server API + workaround). Importar `Button.tsx`.
 - Ainda não há projeto Framer / landing da Corporal Class neste setup (só o design system).
 
 ## Arquivos-chave

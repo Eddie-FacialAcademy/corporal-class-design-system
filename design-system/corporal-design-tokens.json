@@ -1,7 +1,7 @@
 {
   "$meta": {
     "name": "Corporal Class Design System",
-    "version": "1.4.2",
+    "version": "1.6.4",
     "author": "Edegar Junior",
     "source": "Brandbook Corporal Academy 2022 (§3.6)",
     "language": "pt-BR",
@@ -28,7 +28,7 @@
       "peach": "#FFCA9B", "logo": "#FFFFFF",
       "success": "#45C08A", "warning": "#E8B53D", "danger": "#FF7D93", "info": "#74C0D8",
       "successBg": "rgba(69,192,138,.14)", "warningBg": "rgba(232,181,61,.14)", "dangerBg": "rgba(255,125,147,.14)", "infoBg": "rgba(116,192,216,.14)", "rowSel": "rgba(232,138,146,.16)",
-      "shadow": "rgba(214,81,92,.40)", "shadowStrong": "rgba(214,81,92,.50)"
+      "shadow": "rgba(214,81,92,.40)", "shadowStrong": "rgba(214,81,92,.50)", "ctaEnd": "#A74859"
     },
     "light": {
       "bg": "#FAFAFA", "bg2": "#F6F4F2", "card": "#FCFAF8", "card2": "#F2EFEB",
@@ -41,7 +41,7 @@
       "peach": "#FFCA9B", "logo": "#D6515C",
       "success": "#147A45", "warning": "#8A5A00", "danger": "#BE2C45", "info": "#2A7286",
       "successBg": "rgba(31,138,91,.10)", "warningBg": "rgba(138,90,0,.10)", "dangerBg": "rgba(199,47,73,.10)", "infoBg": "rgba(42,114,134,.10)", "rowSel": "rgba(194,67,78,.10)",
-      "shadow": "rgba(214,81,92,.18)", "shadowStrong": "rgba(214,81,92,.26)"
+      "shadow": "rgba(214,81,92,.18)", "shadowStrong": "rgba(214,81,92,.26)", "ctaEnd": "#5A2730"
     }
   },
 

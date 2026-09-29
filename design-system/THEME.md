@@ -1,14 +1,14 @@
-# Tema claro/escuro — Corporal Class Design System
+# Tema claro/escuro · Corporal Class Design System
 
 Desenvolvido por **Edegar Junior**.
 
 **Regra:** o **dark é a base**; o **light é a variante**. O site/app **segue automaticamente a aparência do sistema do visitante** (`prefers-color-scheme`). Opcionalmente, um **toggle** deixa o usuário escolher e a escolha é **lembrada** (`localStorage`).
 
-Toda cor é um token com par **Light/Dark**. Componentes consomem tokens — nunca hex solto — então trocam de tema sozinhos.
+Toda cor é um token com par **Light/Dark**. Componentes consomem tokens (nunca hex solto), então trocam de tema sozinhos.
 
 ---
 
-## 1. Web (HTML/CSS) — já implementado em `corporal-design-system.css`
+## 1. Web (HTML/CSS): já implementado em `corporal-design-system.css`
 
 Três camadas, nesta ordem:
 
@@ -51,7 +51,7 @@ btn.addEventListener('click',function(){
 
 ---
 
-## 2. Framer — como deve ser feito
+## 2. Framer: como deve ser feito
 
 1. **Color Styles com Light + Dark** (em `Corporal Class/…`): cada estilo tem valor de Light e de Dark.
 2. **Aplique os Color Styles** nos fills/textos das camadas (não use hex solto). Como o estilo carrega os dois valores, a camada troca de tema sozinha.

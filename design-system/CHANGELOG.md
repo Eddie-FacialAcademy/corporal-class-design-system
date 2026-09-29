@@ -1,12 +1,12 @@
-# Changelog — Corporal Class Design System
+# Changelog · Corporal Class Design System
 
 Todas as mudanças relevantes deste design system são registradas aqui.
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o
 versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
-- **MAJOR** — muda ou remove um token/API público (quebra compatibilidade).
-- **MINOR** — adiciona de forma retrocompatível (novo componente/token/variante).
-- **PATCH** — correções que não mudam a API (bug, contraste, ajuste fino).
+- **MAJOR**: muda ou remove um token/API público (quebra compatibilidade).
+- **MINOR**: adiciona de forma retrocompatível (novo componente/token/variante).
+- **PATCH**: correções que não mudam a API (bug, contraste, ajuste fino).
 
 ---
 
@@ -14,7 +14,19 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
-## [1.6.3] — 2026-08-28
+## [1.6.4] · 2026-09-29
+### Corrigido
+- Novo token `--cta-end` (fim do degradê do CTA): escuro `#A74859`, claro `#5A2730`. No escuro o CTA terminava em `#5A2730`, 1.7:1 contra o fundo; agora ≥3:1 contra fundo e modal, texto branco 5.6:1.
+- Prévia de tema com o CTA real (texto branco sobre `#E0727A` dava 3.1:1) e sobrelinha clara `#C2434E` (antes `#D6515C`, 3.9:1).
+- Cabeçalho no tema claro: brilho coral de 40% para 6%, o texto sobre ele passava 3.7:1 e agora ≥4.5:1.
+- viewBox dos logos no cabeçalho e na navegação igual ao do símbolo (antes 720×140 e 320×320).
+- Tabela de acessibilidade do showcase com valores medidos nos dois temas (antes repetia números do molde que não eram desta paleta) e linha nova "CTA contra o fundo" (nível 2).
+### Alterado
+- Seletor de design systems inclui a Facial Premium, na ordem única usada em todos os DS.
+- Versão alinhada em todos os arquivos: tokens, CSS, copy-deck e documentação estavam presos em uma versão anterior ao CHANGELOG.
+- Documentação sem travessão e sem "&", com valores de cor, contraste e classe conferidos contra o CSS e o JSON; referências a versões e arquivos inexistentes corrigidas.
+
+## [1.6.3] · 2026-08-28
 ### Alterado
 - Menu "Design systems" agora inclui HArmonyCa Performance e Expert em
   Lábios 2026 (nove marcas no seletor).
@@ -25,7 +37,7 @@ _Nada pendente no momento._
 - Tabela de Color Styles do showcase: a coluna Escuro de "text/Secundário"
   mostrava um valor que não era o token `--mut` real (drift do molde).
 
-## [1.6.2] — 2026-08-28
+## [1.6.2] · 2026-08-28
 ### Corrigido
 - Documentação de cor "Secundário": o swatch da seção Cores e a tabela de
   Color Styles mostravam um valor que não era o token `--mut` real do tema
@@ -33,18 +45,18 @@ _Nada pendente no momento._
 - Grafia: "antiimproviso" corrigido para "anti-improviso" e "pra o" para
   "para o" na seção Voz e tom.
 
-## [1.6.1] — 2026-08-28
+## [1.6.1] · 2026-08-28
 ### Alterado
 - Menu "Design systems" agora inclui a Fotografia na HOF, nova marca do
   ecossistema (sete marcas no seletor).
 
-## [1.6.0] — 2026-08-25
+## [1.6.0] · 2026-08-25
 ### Adicionado
 - Favicon da página: badge arredondado na cor da marca com o ícone oficial do
   logo em branco, embutido como SVG data-URI no `<head>` (a página segue
   self-contained, sem requisição extra).
 
-## [1.5.1] — 2026-08-25
+## [1.5.1] · 2026-08-25
 ### Corrigido
 - Anel de foco em duas camadas: `--focus` agora é `0 0 0 2px var(--bg),
   0 0 0 4px var(--focus-ring)`, com `--focus-ring` sólido por tema (escuro
@@ -54,7 +66,7 @@ _Nada pendente no momento._
 - Guard de alto contraste (`forced-colors`) com `outline` `!important`: o
   indicador de foco não é mais anulado pelo `outline:none` dos componentes.
 
-## [1.5.0] — 2026-08-25
+## [1.5.0] · 2026-08-25
 ### Adicionado
 - Menu "Design systems" na navegação do showcase: acesso direto aos design
   systems das seis marcas (Facial Academy, Facial Class, Facial Scale,
@@ -67,35 +79,35 @@ _Nada pendente no momento._
 - A mesma borda sincronizada agora no CSS do pacote (`.cc-btn.cc-gold`), que
   ainda não a trazia.
 
-## [1.4.2] — 2026-06-18
+## [1.4.2] · 2026-06-18
 ### Corrigido
 - Sincronização dos valores canônicos entre showcase, CSS drop-in, JSON de tokens, documentação e tabela de Color Styles: fundo light `#FAFAFA`, `--danger` light `#BE2C45`, elevação dark preta em camadas e tokens de componentes avançados no pacote.
 - `--info` do pacote voltou ao teal canônico (`#74C0D8` dark / `#2A7286` light), `--mut` light foi para `#835D63` e os botões preenchidos/sólidos usam tom com contraste AA para texto branco (`#C2434E`, hover `#B05059`).
 ### Alterado
 - Seção Cores do showcase: novo grupo "Tema claro · fundos" e textos deixando explícito que as superfícies usam off-white `#FAFAFA` / quase-preto `#0E0708` (nunca branco ou preto puro); preview do tema claro corrigido de `#FFFFFF` para `#FAFAFA`.
 
-## [1.4.1] — 2026-06-18
+## [1.4.1] · 2026-06-18
 ### Adicionado
 - `IMPLEMENTACAO.md`: documentação técnica de implementação (arquitetura sem build, tokens e theming, fundamentos, botões e todos os estados/microinterações, componentes, comportamentos JS, acessibilidade, responsividade, consumo/Framer, deploy/infra, governança e diferenças por marca). Referenciada no `DESIGN-SYSTEM.md`.
 
-## [1.4.0] — 2026-06-17
+## [1.4.0] · 2026-06-17
 ### Adicionado
 - Nova seção "Voz e tom" (13) no showcase, no grupo Sistema do menu: as regras de copy renderizadas na página (adjetivos da voz, faça/não faça, estrangeirismos traduzir/manter, separação de domínio, microcopy modelo). Espelha o guia do pacote `voz-e-tom.md`. WCAG 0 falhas nos dois temas.
 ### Alterado
 - Tokens passou a ser a seção 14 (Voz e tom assumiu a 13).
 
-## [1.3.2] — 2026-06-17
+## [1.3.2] · 2026-06-17
 ### Alterado
 - Hero com a copy do deck: H1 "Pare de construir no escuro." + parágrafo do deck (instrução de clicar-para-copiar mantida).
 - Notas das 12 seções substituídas pela versão do deck (termos normalizados ao pt-BR do DS). Nota de Estrutura mantida (o deck não trouxe).
 
-## [1.3.1] — 2026-06-17
+## [1.3.1] · 2026-06-17
 ### Corrigido
 - Contraste AA do badge de status "Erro" (status danger) em tema claro: tom de `--danger` aprofundado (valor anterior -> #BE2C45) para passar 4.5:1. WCAG agora 0 falhas nos dois temas.
 ### Alterado
 - `voz-e-tom.md`: adendo geral de referenciamento de experts (genérico, sem citar nomes).
 
-## [1.3.0] — 2026-06-17
+## [1.3.0] · 2026-06-17
 ### Adicionado
 - Copy de produto integrada (deck do time de copy) nas demos: alertas, estado vazio, confirmação destrutiva, dica e balão, abas, acordeão, trilha de navegação, tabela de dados (5 linhas, status Publicada/Rascunho/Em revisão), seletor de data, app nav (6 itens) e paleta de comandos (3 grupos).
 - Guia de copy generalista `voz-e-tom.md` (voz, faça/não faça, estrangeirismos, separação de domínio, acessibilidade). Vale para todas as marcas.
@@ -105,13 +117,13 @@ _Nada pendente no momento._
 - Termos das demos normalizados para o pt-BR do DS (ex.: data table → tabela de dados, status → estado).
 - Nota de Fundamentos: referência das CSS variables corrigida para a seção 13.
 
-## [1.2.1] — 2026-06-17
+## [1.2.1] · 2026-06-17
 ### Alterado
 - Copy 100% em pt-BR: componentes, gradientes, escala tipográfica e tabela de Color Styles do Framer (mantidos nomes de marca, tokens/código e features do Framer).
 - Scrim dos demos (modal, paleta de comandos) usa tom da marca em vez de cinza.
 - Export de gradiente em PNG passou para 4K (3840×2160).
 
-## [1.2.0] — 2026-06-17
+## [1.2.0] · 2026-06-17
 ### Adicionado
 - Seção "Componentes avançados" com 4 componentes de produto:
   - Data table (ordenação, paginação, seleção de linha, densidade, sticky header, estados).
@@ -124,7 +136,7 @@ _Nada pendente no momento._
 - Contraste AA revisado nos novos componentes (dia e botão selecionado usam o tom profundo da marca).
 - Backgrounds claros usam #FAFAFA em vez de branco puro; texto mantém #fff/#000 onde já existia.
 
-## [1.1.0] — 2026-06-16
+## [1.1.0] · 2026-06-16
 ### Adicionado
 - Navegação por categorias (Marca · Componentes · Sistema) com menus suspensos, scrollspy e logo da marca.
 ### Alterado
@@ -133,7 +145,7 @@ _Nada pendente no momento._
 - Cantos arredondados corrigidos no card com mídia.
 - Copy revisada (menos estrangeirismos desnecessários).
 
-## [1.0.0] — 2026-06-16
+## [1.0.0] · 2026-06-16
 
 Primeira versão consolidada e documentada do sistema. Reúne fundações, camada
 de produto e camada de maturidade/processo.
@@ -154,8 +166,8 @@ de produto e camada de maturidade/processo.
 - **Estrutura:** tabs, accordion, avatar (+ grupo e status), breadcrumb, paginação
   e variantes de card (básico, interativo, mídia, horizontal).
 
-### Maturidade & processo
-- Seção "Princípios & processo": arquitetura de tokens, princípios de motion e do/don't.
+### Maturidade e processo
+- Seção "Princípios e processo": arquitetura de tokens, princípios de motion e do/don't.
 - Este `CHANGELOG.md` e o `CONTRIBUTING.md` (governança, regra das 3 equipes, SemVer).
 - Menu de navegação fixo com scrollspy no showcase + respiro de layout revisado.
 
