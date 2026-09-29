@@ -1,6 +1,6 @@
 # Corporal Class · Design System
 
-**Versão 1.6.4** · Desenvolvido por **Edegar Junior** · Derivado do brandbook **Corporal Academy 2022** (§3.6).
+**Versão 1.7.0** · Desenvolvido por **Edegar Junior** · Derivado do brandbook **Corporal Academy 2022** (§3.6).
 
 Sistema de design portátil para web (HTML/CSS, React, Framer). Dark por padrão, light por troca de tema. Esta pasta é a **fonte da verdade** para aplicar a marca em qualquer projeto.
 
@@ -54,7 +54,7 @@ Importe `corporal-design-tokens.json` e gere variáveis no seu formato (CSS vars
 ## Fundamentos
 
 ### Cores institucionais (base: não inventar fora disto)
-`#D6515C` bordô (pantone 186 U) · `#FFB1BD` vermelho claro · `#FFE4A4` amarelado · `#FFFFFF` branco · `#000000` preto.
+`#D6515C` bordô (pantone 186 U) · `#FFB1BD` rosa claro · `#FFE4A4` dourado claro · `#FFFFFF` branco · `#000000` preto.
 
 Acento **derivado** (escala de uso, não institucional): `#E88A92` coral · `#5A2730` bordô deep · `#E0727A` bordô bright.
 
@@ -64,7 +64,7 @@ Acento **derivado** (escala de uso, não institucional): `#E88A92` coral · `#5A
 ```html
 <script>(function(){try{var t=localStorage.getItem('cc-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();</script>
 ```
-No light, **dourado e rosa como texto** usam variantes `-ink` (`--gold-ink`, `--rose-ink`); como preenchimento mantêm a cor institucional. A marca (`--logo`) é branca no dark e bordô no light.
+No light, **dourado e rosa como texto** usam variantes `-ink` (`--highlight-ink`, `--support-ink`); como preenchimento mantêm a cor institucional. A marca (`--logo`) é branca no dark e bordô no light.
 
 ### Tokens de sistema
 - **Raio:** sm 8 · md 14 · lg 18 · pill 30
@@ -153,7 +153,7 @@ Somente cores do brand. **Não usar conic, blob nem halo**; preferir **meshes** 
 
 ### Botão: `cc-btn`
 `class="cc-btn <variante> <tamanho>"`
-- **Variantes:** `cc-fill` (gradiente bordô, primário) · `cc-solid` · `cc-outline` · `cc-ghost` (texto) · `cc-gold` · `cc-gold-o`
+- **Variantes:** `cc-fill` (gradiente bordô, primário) · `cc-solid` · `cc-outline` · `cc-ghost` (texto) · `cc-highlight` · `cc-highlight-o`
 - **Tamanhos:** `cc-sm` · (md = padrão) · `cc-lg`
 - **Estados:** hover · `:active` · `:focus-visible` · `:disabled` / `[aria-disabled]`
 - **Regras:** altura mínima 44px, raio pill, ícone Phosphor opcional (`<svg class="cc-ico">`). Use `<button>` (não `<a>` sem href) para ser focável.
@@ -168,7 +168,7 @@ Sempre **ícone + texto**, nunca só cor. Verde/âmbar/vermelho saem da paleta d
 
 ## Acessibilidade (obrigatório)
 - **Contraste WCAG AA:** texto ≥4.5:1, grande/UI ≥3:1. No light, dourado/rosa como texto = `-ink`.
-- **Foco visível:** `outline:2px solid var(--coral)` + `box-shadow var(--focus)`; guard `@media (forced-colors: active)`.
+- **Foco visível:** `outline:2px solid var(--accent)` + `box-shadow var(--focus)`; guard `@media (forced-colors: active)`.
 - **`prefers-reduced-motion`:** reduzir transições/animações.
 - **Toque ≥44px.** **Cor nunca sozinha** (estados com ícone+texto).
 

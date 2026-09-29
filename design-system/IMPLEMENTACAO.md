@@ -3,7 +3,7 @@
 Documentação técnica de **como cada item é implementado**, para subir em qualquer infra (HTML/CSS puro, qualquer stack via tokens, ou Framer). Tudo aqui reflete o que está no showcase publicado (`index.html`) e no pacote `design-system/`. Em caso de divergência, **o showcase + `corporal-design-tokens.json` são a fonte da verdade**; o `corporal-design-system.css` (drop-in) espelha esses tokens.
 
 - **Sem build step.** O showcase é um único `index.html` self-contained (CSS em `<style>`, SVGs em `<defs><symbol>`, JS em `<script>`, fonte Silka embutida em base64). Abre direto no navegador, sem bundler, sem dependências de rede.
-- **Marca irmã:** Facial Class. Mesma arquitetura; só mudam cores, prefixo de classe (`fc-`), chave de tema (`fc-theme`) e nomes de arquivo. Ver a seção **13. Diferenças por marca**.
+- **Molde:** Facial Class. Mesma arquitetura; mudam paleta, logo, prefixo de classe (`cc-`), chave de tema e copy. Ver a seção 13.
 
 ---
 
@@ -66,9 +66,9 @@ Cores do brandbook Corporal Academy. Nada deve sair daqui.
 |---|---|---|
 | `--brand-bordo` | `#D6515C` | predominante |
 | `--brand-coral` | `#E88A92` | accent |
-| `--brand-amarelo` | `#FFE4A4` | dourado |
-| `--brand-vermelho` | `#FFB1BD` | rosa |
-| `--brand-amarelado` | `#FFCA9B` | pêssego |
+| `--brand-dourado` | `#FFE4A4` | dourado |
+| `--brand-rosa` | `#FFB1BD` | rosa |
+| `--brand-pessego` | `#FFCA9B` | pêssego |
 | `--brand-branco` | `#FFFFFF` | sem papel fixo |
 | `--brand-preto` | `#000000` | sem papel fixo |
 
@@ -86,16 +86,16 @@ Os `--brand-*` **não** mudam entre temas; os tokens de tema abaixo é que deriv
 | `--txt` | `#FAF7F8` | `#2A1517` | texto principal |
 | `--mut` | `#CBBDBF` | `#835D63` | texto secundário |
 | `--legal-mut` | `#A07B82` | `#8B656B` | texto legal/rodapé |
-| `--bordo` | `#5A2730` | `#5A2730` | bordô profundo (gradiente) |
-| `--bordo2` | `#D6515C` | `#D6515C` | primária (gradientes) |
-| `--bordo-bright` | `#E0727A` | `#E0727A` | hover sólido |
-| `--coral` | `#E88A92` | `#C2434E` | **accent interativo** (links, ativo, foco) |
-| `--coral-soft` | `#F0A6AD` | `#B05059` | accent hover |
+| `--primary-deep` | `#5A2730` | `#5A2730` | bordô profundo (gradiente) |
+| `--primary` | `#D6515C` | `#D6515C` | primária (gradientes) |
+| `--primary-bright` | `#E0727A` | `#E0727A` | hover sólido |
+| `--accent` | `#E88A92` | `#C2434E` | **accent interativo** (links, ativo, foco) |
+| `--accent-soft` | `#F0A6AD` | `#B05059` | accent hover |
 | `--cta-end` | `#A74859` | `#5A2730` | fim do degradê do CTA (`.b.fill`) |
 | `--focus-ring` | `#E88A92` | `#C2434E` | anel de foco sólido |
 | `--logo` | `#FFFFFF` | `#D6515C` | cor do lockup SVG |
-| `--gold` / `--gold-ink` | `#FFE4A4` / `#FFE4A4` | `#FFE4A4` / `#7A5A0E` | dourado fill / texto |
-| `--rose` / `--rose-ink` | `#FFB1BD` / `#FFB1BD` | `#FFB1BD` / `#B04A5E` | rosa fill / texto |
+| `--highlight` / `--highlight-ink` | `#FFE4A4` / `#FFE4A4` | `#FFE4A4` / `#7A5A0E` | dourado fill / texto |
+| `--support` / `--support-ink` | `#FFB1BD` / `#FFB1BD` | `#FFB1BD` / `#B04A5E` | rosa fill / texto |
 
 **Semânticas** (texto sempre com ícone/label junto, nunca cor sozinha):
 
@@ -156,14 +156,14 @@ html{scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--bg);color:var(--txt);line-height:1.5;
      -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
 img,svg,video{display:block;max-width:100%}
-a{color:var(--coral);text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 ```
 `font-variant-numeric:tabular-nums` é **global** (dígitos alinham em tabelas/listas).
 
 ### 3.2 Foco visível (a11y, obrigatório)
 ```css
 a:focus-visible,button:focus-visible,.b:focus-visible,[tabindex]:focus-visible{
-  outline:2px solid var(--coral);outline-offset:2px;box-shadow:var(--focus);border-radius:6px}
+  outline:2px solid var(--accent);outline-offset:2px;box-shadow:var(--focus);border-radius:6px}
 @media (forced-colors:active){
   .b:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid Highlight!important;outline-offset:2px}}
 ```
@@ -212,7 +212,7 @@ Classe base **`.b`** (drop-in: `.cc-btn`). Composição: `.b` + tamanho (`.sm`/`
 ### 4.2 Variantes e estados (hover/active)
 ```css
 /* Preenchido (gradiente + glow) */
-.b.fill{background:linear-gradient(120deg,#C2434E,var(--cta-end,var(--bordo)));color:#fff;box-shadow:0 10px 30px var(--sh)}
+.b.fill{background:linear-gradient(120deg,#C2434E,var(--cta-end,var(--primary-deep)));color:#fff;box-shadow:0 10px 30px var(--sh)}
 .b.fill:hover{transform:translateY(-2px);box-shadow:0 16px 38px var(--sh-strong)}   /* sobe + glow cresce */
 .b.fill:active{box-shadow:0 6px 18px var(--sh)}                                      /* glow recua */
 
@@ -221,24 +221,24 @@ Classe base **`.b`** (drop-in: `.cc-btn`). Composição: `.b` + tamanho (`.sm`/`
 
 /* Contorno */
 .b.outline{background:transparent;color:var(--txt);border:1px solid var(--line)}
-.b.outline:hover{border-color:var(--coral);color:var(--coral)}
+.b.outline:hover{border-color:var(--accent);color:var(--accent)}
 
 /* Inline / ghost */
-.b.ghost{background:transparent;color:var(--coral);padding:10px 14px;border-radius:8px}
-.b.ghost:hover{color:var(--coral-soft);text-decoration:underline;text-underline-offset:3px}
+.b.ghost{background:transparent;color:var(--accent);padding:10px 14px;border-radius:8px}
+.b.ghost:hover{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px}
 
 /* Dourado e dourado contorno */
-.b.gold{background:var(--gold);color:#1A0E10;border:1px solid var(--gold-ink)}
-.b.gold:hover{background:var(--gold-deep)}
-.b.gold-o{background:transparent;color:var(--gold-ink);border:1px solid var(--gold-line)}
-.b.gold-o:hover{border-color:var(--gold-ink)}
+.b.highlight{background:var(--highlight);color:#1A0E10;border:1px solid var(--highlight-ink)}
+.b.highlight:hover{background:var(--highlight-deep)}
+.b.highlight-o{background:transparent;color:var(--highlight-ink);border:1px solid var(--highlight-line)}
+.b.highlight-o:hover{border-color:var(--highlight-ink)}
 ```
 
 ### 4.3 Estados globais (microinteração)
 ```css
 .b:active{transform:translateY(0) scale(.985);transition-duration:var(--motion-fast)}  /* press: encolhe 1.5% em .15s */
 .b:disabled,.b.is-disabled{opacity:.42;pointer-events:none;box-shadow:none;transform:none}
-.b:focus-visible{outline:2px solid var(--coral);outline-offset:2px;box-shadow:var(--focus)}
+.b:focus-visible{outline:2px solid var(--accent);outline-offset:2px;box-shadow:var(--focus)}
 @media (max-width:560px){.b{white-space:normal;text-align:center}}
 ```
 **Resumo da microinteração do botão:** `transition:.2s var(--ease)` (transform + box-shadow + cor); `fill` levanta 2px no hover e o glow (`--sh`→`--sh-strong`) intensifica; `:active` faz `scale(.985)` em `.15s`. O **glow vive só no botão** (cartões não usam glow). Alvo de toque mínimo 44px (`min-height`).
@@ -262,7 +262,7 @@ Para cada um: classes, estados e microinterações. (A11y consolidada na seção
 ```css
 .cc-chip{background:var(--card);border:1px solid var(--line);color:var(--txt);
          padding:9px 16px;border-radius:30px}                 /* neutro, cor via token */
-.cc-badge{color:var(--gold-ink);border:1px solid var(--gold-line);font-size:10.5px;
+.cc-badge{color:var(--highlight-ink);border:1px solid var(--highlight-line);font-size:10.5px;
           padding:4px 10px;border-radius:20px}                /* destaque dourado */
 .cc-status{padding:9px 15px;border-radius:30px;border:1px solid currentColor}
 .cc-status.is-success{color:var(--success);background:var(--success-bg)}
@@ -277,13 +277,13 @@ Para cada um: classes, estados e microinterações. (A11y consolidada na seção
 .input,.textarea,.select{font-size:15px;color:var(--txt);background:var(--card);
   border:1px solid var(--line);border-radius:14px;padding:0 14px;min-height:44px;width:100%;outline:none;
   transition:border-color var(--motion) var(--ease),box-shadow var(--motion) var(--ease)}
-.input:focus{border-color:var(--coral);box-shadow:var(--focus)}
+.input:focus{border-color:var(--accent);box-shadow:var(--focus)}
 .input.is-error{border-color:var(--danger)}  .input.is-success{border-color:var(--success)}
 .input:disabled{opacity:var(--opacity-disabled);cursor:not-allowed}
 .input[readonly]{background:var(--card2);color:var(--mut)}
 ```
-- **Checkbox/radio** (`.check`): input `appearance:none`, 20px, `border-radius:6px` (radio 50%); `:checked` pinta `var(--coral)` + checkmark via `::after` (rotate 45°); radio usa `::after` circular. `min-height:44px` no label.
-- **Toggle** (`.toggle`): trilho 42×24 `border-radius:999px`, thumb 20px `::after` que desliza `left 2px→20px` em `.2s`; `:checked` pinta o trilho de `--coral`.
+- **Checkbox/radio** (`.check`): input `appearance:none`, 20px, `border-radius:6px` (radio 50%); `:checked` pinta `var(--accent)` + checkmark via `::after` (rotate 45°); radio usa `::after` circular. `min-height:44px` no label.
+- **Toggle** (`.toggle`): trilho 42×24 `border-radius:999px`, thumb 20px `::after` que desliza `left 2px→20px` em `.2s`; `:checked` pinta o trilho de `--accent`.
 - Validação: mensagem diz **o que houve + como resolver**; estado por classe (`is-error`/`is-success`) + texto, nunca só cor.
 
 ### 5.3 Feedback
@@ -291,7 +291,7 @@ Para cada um: classes, estados e microinterações. (A11y consolidada na seção
 .alert{display:flex;gap:11px;padding:13px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card)}
 .alert.ok{background:var(--success-bg);border-color:var(--success)}   /* idem info/warn/err */
 .toast{border-radius:30px;background:var(--card2);box-shadow:var(--elev-overlay)}
-.spinner{width:28px;height:28px;border:3px solid var(--line);border-top-color:var(--coral);
+.spinner{width:28px;height:28px;border:3px solid var(--line);border-top-color:var(--accent);
          border-radius:50%;animation:spin .7s linear infinite}
 .skel{background:linear-gradient(90deg,var(--card) 25%,var(--card2) 37%,var(--card) 63%);
       background-size:400% 100%;animation:shimmer 1.4s ease infinite}
@@ -314,15 +314,15 @@ Scrim usa `backdrop-filter:blur(6px)` + matiz bordô (não cinza). Aparição/po
 ```css
 .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
 .tab{color:var(--mut);border-bottom:2px solid transparent;padding:10px 14px;margin-bottom:-1px}
-.tab.active{color:var(--coral);border-bottom-color:var(--coral)}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .acc summary svg{transition:transform .2s var(--ease)}                  /* caret */
 .acc details[open] summary svg{transform:rotate(180deg)}               /* gira 180° ao abrir */
 .av{width:40px;height:40px;border-radius:50%;background:var(--card2);border:1px solid var(--line)}
 .av .dot{position:absolute;...;background:var(--success);border:2px solid var(--bg)}  /* presença */
 .av-stack .av{margin-left:-12px;border:2px solid var(--bg)}            /* empilhado */
-.crumb a:hover{color:var(--coral)}  .crumb .cur{color:var(--txt);font-weight:500}
+.crumb a:hover{color:var(--accent)}  .crumb .cur{color:var(--txt);font-weight:500}
 .pg{min-width:40px;height:40px;border-radius:8px;border:1px solid var(--line)}
-.pg.active{border-color:var(--coral);color:var(--coral);font-weight:600}  .pg:disabled{opacity:.45}
+.pg.active{border-color:var(--accent);color:var(--accent);font-weight:600}  .pg:disabled{opacity:.45}
 ```
 Accordion usa `<details>/<summary>` nativo (estado open gratuito + acessível); `::-webkit-details-marker{display:none}` esconde o triângulo padrão.
 
@@ -331,7 +331,7 @@ Accordion usa `<details>/<summary>` nativo (estado open gratuito + acessível); 
 .cardv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;overflow:hidden}
 .cardv.inter{cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
 .cardv.inter:hover{transform:translateY(-3px);box-shadow:var(--elev-overlay)}   /* sobe 3px + sombra (sem glow) */
-.cardv-media .media{height:92px;background:linear-gradient(120deg,var(--gold),var(--rose))}
+.cardv-media .media{height:92px;background:linear-gradient(120deg,var(--highlight),var(--support))}
 ```
 
 ### 5.7 Avançados (camada de produto)
@@ -345,16 +345,16 @@ Accordion usa `<details>/<summary>` nativo (estado open gratuito + acessível); 
 
 **Command palette (`.cmdk`)**: overlay com `.cmdk-scrim`:
 - `.cmdk{width:min(520px,100%);box-shadow:var(--elev-modal)}`, input `.cmdk-in`, lista `.cmdk-list{max-height:262px;overflow-y:auto}`, grupos `.cmdk-grp` (uppercase).
-- Item `.cmdk-item`; `:hover{background:var(--card2)}`; ativo `.is-active{background:var(--row-sel)}` + ícone em `--coral` + `.kbd` (↵).
+- Item `.cmdk-item`; `:hover{background:var(--card2)}`; ativo `.is-active{background:var(--row-sel)}` + ícone em `--accent` + `.kbd` (↵).
 - `.kbd`: tecla com `border-bottom-width:2px` (relevo), `tabular-nums`. id da lista: `cmdk-list-co`.
 
 **App shell (`.appshell`)**: `grid-template-columns:var(--side-w) 1fr` (248px + conteúdo), `min-width:660px`:
 - Sidebar `.appside` (brand + `.navgroup-lbl` + itens + `.side-foot`); topbar `.appbar`.
-- Item `.navitem`; `:hover{background:var(--card2);color:var(--txt)}`; ativo `.is-active{background:var(--row-sel)}` + **faixa accent à esquerda** via `::before{width:3px;background:var(--coral)}` + ícone em `--coral`.
+- Item `.navitem`; `:hover{background:var(--card2);color:var(--txt)}`; ativo `.is-active{background:var(--row-sel)}` + **faixa accent à esquerda** via `::before{width:3px;background:var(--accent)}` + ícone em `--accent`.
 
 **Date picker (`.cal`)**: calendário `width:296px`, grid `.cal-grid{grid-template-columns:repeat(7,1fr)}`:
 - Dia `.cal-day{height:var(--cal-cell)}`; `:hover{background:var(--card2)}`.
-- Estados: `.is-out{opacity:.5}` · `.is-today{box-shadow:inset 0 0 0 1.5px var(--coral)}` · `.is-range{background:var(--row-sel)}` · `.is-sel{background:#C2434E;color:#fff;font-weight:600}` (tom profundo: branco sobre `#C2434E` dá 5.0:1).
+- Estados: `.is-out{opacity:.5}` · `.is-today{box-shadow:inset 0 0 0 1.5px var(--accent)}` · `.is-range{background:var(--row-sel)}` · `.is-sel{background:#C2434E;color:#fff;font-weight:600}` (tom profundo: branco sobre `#C2434E` dá 5.0:1).
 
 ---
 
@@ -387,7 +387,7 @@ Tudo vanilla, sem dependências. Scripts no fim do `<body>`.
 ## 8. Acessibilidade ⭐
 
 - **Contraste WCAG 2.1 AA** medido nos 2 temas (texto normal ≥4.5:1; grande/UI ≥3:1). Verificado por sweep automatizado (compondo fundos semi-transparentes sobre o pai e desativando transições antes de medir). 0 falhas em dark e light.
-- **Foco visível:** outline 2px `--coral` + `box-shadow:var(--focus)` (anel em duas camadas: 2px de `--bg` e 2px de `--focus-ring`); guard para `forced-colors` (`Highlight`).
+- **Foco visível:** outline 2px `--accent` + `box-shadow:var(--focus)` (anel em duas camadas: 2px de `--bg` e 2px de `--focus-ring`); guard para `forced-colors` (`Highlight`).
 - **Cor nunca sozinha:** todo estado/semântica vem com ícone e/ou texto. (Por isso o info é teal, distinto do coral/vermelho.)
 - **Alvos de toque:** `--touch-min:44px` em botões, `.check`, `.toggle`; controles densos (pager 40, dia do calendário 38) compensam com espaçamento.
 - **Movimento:** respeita `prefers-reduced-motion`.
@@ -445,27 +445,29 @@ Dark é o padrão; `data-theme="light"` no `<html>` força claro; sem isso segue
 
 ---
 
-## 13. Diferenças por marca (Corporal × Facial)
+## 13. Relação com o molde
 
-Mesma arquitetura, JS, componentes, escalas e semânticas. Mudam:
+**Molde:** Facial Class. Mesma arquitetura, JS, componentes, escalas e semânticas; o que é próprio da Corporal Class está abaixo.
 
-| Aspecto | Corporal Class | Facial Class |
-|---|---|---|
-| Arquivos | `corporal-design-system.css` · `corporal-design-tokens.json` · `copy-deck.corporal.json` | `facial-design-system.css` · `facial-design-tokens.json` · `copy-deck.facial.json` |
-| Prefixo de classe (drop-in) | `cc-*` | `fc-*` |
-| Chave de tema | `localStorage['cc-theme']` | `localStorage['fc-theme']` |
-| id do cmdk | `cmdk-list-co` | `cmdk-list-fa` |
-| Marca / Academy | Corporal Class / Corporal Academy | Facial Class / Facial Academy |
-| Token primário | `--bordo2 #D6515C` | `--roxo2 #644389` |
-| Accent interativo | `--coral` (#E88A92 dark / #C2434E light) | `--lilas` (#A289D7 dark / #644389 light) |
-| `--info` (dark/light) | `#74C0D8` / `#2A7286` (**teal**, p/ não confundir com o coral/vermelho) | `#A289D7` / `#5E4A8C` (roxo) |
-| Foco (`--focus-ring`) | `#E88A92` dark / `#C2434E` light | `rgba(162,137,215,.55)` |
-| Sombra (matiz) | `rgba(214,81,92,…)` | `rgba(100,67,137,…)` |
-| Logo no nav | 30px (lockup com mais respiro) | 24px |
+Derivados deste DS: Corporal Academy.
 
-**Cores institucionais da Facial** (brandbook): `--brand-roxo #644389` · `--brand-lilas #A289D7` · `--brand-amarelo #FFE4A4` · `--brand-vermelho #FFB1BD` · `--brand-amarelado #FFCA9B` · branco · preto. Superfícies/texto no tema são tingidos no roxo. Semânticas success/warning/danger são **iguais** nas duas marcas; só o `--info` difere (Corporal teal, Facial roxo).
+Valores lidos do CSS e do showcase desta versão. Esta seção não repete valores de outras marcas: cada DS documenta só os próprios, para não desatualizar.
 
-> Trocar de marca = trocar a linha de import (`corporal-…`↔`facial-…`) e o prefixo de classe. O resto do código é idêntico.
+| Aspecto | Corporal Class |
+|---|---|
+| Arquivos | `corporal-design-system.css` · `corporal-design-tokens.json` · `copy-deck.corporal.json` |
+| Prefixo de classe (CSS de colar no site) | `cc-*` |
+| Chave de tema | `localStorage['cc-theme']` |
+| id da paleta de comandos | `cmdk-list-co` |
+| Token primário | `--primary` `#D6515C` |
+| Destaque interativo (links, foco de campo) | `--accent` `#E88A92` escuro · `#C2434E` claro |
+| CTA (degradê) | `#C2434E → #A74859` escuro · `#C2434E → #5A2730` claro |
+| `--info` | `#74C0D8` escuro · `#2A7286` claro |
+| Foco (`--focus-ring`) | `#E88A92` escuro · `#C2434E` claro |
+| Sombra (matiz) | `rgba(214,81,92,…)` |
+| Logo na navegação | `30px` de altura |
+
+> Trocar de marca = trocar a linha de import (`corporal-design-system.css`) e o prefixo de classe (`cc-`). O resto do código é igual entre os DS do mesmo molde.
 
 ---
 

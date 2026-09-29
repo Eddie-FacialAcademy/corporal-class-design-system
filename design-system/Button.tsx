@@ -34,22 +34,22 @@ export default function Button(props) {
     const variants: Record<string, React.CSSProperties> = {
         fill: {
             background:
-                "linear-gradient(120deg,var(--bordo2,#D6515C),var(--bordo,#5A2730))",
+                "linear-gradient(120deg,var(--primary,#D6515C),var(--primary-deep,#5A2730))",
             color: "#fff",
             boxShadow: "0 10px 30px var(--sh,rgba(214,81,92,.40))",
         },
-        solid: { background: "var(--bordo2,#D6515C)", color: "#fff" },
+        solid: { background: "var(--primary,#D6515C)", color: "#fff" },
         outline: {
             background: "transparent",
             color: "var(--txt,#FAF7F8)",
             border: "1px solid var(--line,rgba(232,138,146,.14))",
         },
-        ghost: { background: "transparent", color: "var(--coral,#E88A92)" },
-        gold: { background: "var(--gold,#FFE4A4)", color: "#1A0E10" },
-        "gold-o": {
+        ghost: { background: "transparent", color: "var(--accent,#E88A92)" },
+        highlight: { background: "var(--highlight,#FFE4A4)", color: "#1A0E10" },
+        "highlight-o": {
             background: "transparent",
-            color: "var(--gold-ink,#FFE4A4)",
-            border: "1px solid var(--gold-line,rgba(255,228,164,.42))",
+            color: "var(--highlight-ink,#FFE4A4)",
+            border: "1px solid var(--highlight-line,rgba(255,228,164,.42))",
         },
     }
 
@@ -74,7 +74,7 @@ export default function Button(props) {
         transition: "transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s",
         opacity: disabled ? 0.42 : 1,
         pointerEvents: disabled ? "none" : "auto",
-        ...variants[variant],
+        ...(variants[variant] ?? variants[({ gold: "highlight", "gold-o": "highlight-o" } as Record<string, string>)[variant] ?? "fill"]), // "gold"/"gold-o": nomes legados
         ...style,
     }
 
@@ -126,7 +126,7 @@ addPropertyControls(Button, {
     variant: {
         type: ControlType.Enum,
         title: "Variante",
-        options: ["fill", "solid", "outline", "ghost", "gold", "gold-o"],
+        options: ["fill", "solid", "outline", "ghost", "highlight", "highlight-o"],
         optionTitles: ["Preenchido", "Sólido", "Contorno", "Inline", "Dourado", "Dourado contorno"],
         defaultValue: "fill",
     },

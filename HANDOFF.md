@@ -12,10 +12,10 @@ Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avanç
 
 ### Pacote portátil (`design-system/`)
 - `silka.css` · `corporal-design-system.css` · `corporal-design-tokens.json` · `Button.tsx` · `THEME.md` · `DESIGN-SYSTEM.md`.
-- Gerado a partir do template **Facial Class** via recolor roxo→bordô (`#D6515C` / pantone 186 U) + rename `fc-`→`cc-`, `--roxo`→`--bordo`, `--lilas`→`--coral`.
+- Gerado a partir do template **Facial Class** via recolor roxo→bordô (`#D6515C` / pantone 186 U) + rename `fc-`→`cc-`, `--primary-deep`→`--primary-deep`, `--accent`→`--accent`.
 
 ### Marca (fiel ao brandbook §3.6)
-- **Cor primária:** bordô `#D6515C` (pantone 186 U). Institucionais (5): bordô, vermelho claro `#FFB1BD`, amarelado `#FFE4A4`, branco, preto. Acento derivado coral `#E88A92`.
+- **Cor primária:** bordô `#D6515C` (pantone 186 U). Institucionais (5): bordô, rosa claro `#FFB1BD`, dourado claro `#FFE4A4`, branco, preto. Acento derivado coral `#E88A92`.
 - **Logos** Corporal (4 composições) embutidos como `<symbol>` `currentColor` (seguem o tema: branco no dark, bordô no light).
 - **Copy** revisada pra Corporal (Curso Celulite PRO · estética corporal · planos Ouro e Black).
 - **Fonte** Silka inalterada (embutida base64).
